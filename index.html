@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Резервування аудиторій</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<!-- Main container -->
+<div class="reservation-container">
+  <!-- Header section -->
+  <header>
+    <h2>Резервування аудиторій</h2>
+  </header>
+
+  <!-- Form section -->
+  <section>
+    <h2>Форма резервування</h2>
+    <form action="/reserve" method="post">
+      <!-- Auditorium selection -->
+      <label for="auditorium">Аудиторія:</label>
+      <select id="auditorium" name="auditorium">
+        <option value="">Виберіть аудиторію</option>
+        <option value="101">101</option>
+        <option value="102">102</option>
+        <option value="103">103</option>
+        <!-- etc. -->
+      </select>
+
+      <!-- Date selection -->
+      <label for="date">Дата:</label>
+      <input type="date" id="date" name="date" value="">
+
+      <!-- Start time selection -->
+      <label for="start-time">Час початку:</label>
+      <input type="time" id="start-time" name="start-time" step="60" max="23:59" value="00:00">
+
+      <!-- Duration selection -->
+      <label for="duration">Тривалість:</label>
+      <select id="duration" name="duration">
+        <option value="1">1 година</option>
+        <option value="2">2 години</option>
+        <option value="4">4 години</option>
+        <option value="24">1 день</option>
+        <option value="48">2 дні</option>
+        <option value="120">5 днів</option>
+      </select>
+
+      <!-- Reserve button -->
+      <button class="reserve-button" type="submit">Зарезервувати</button>
+    </form>
+  </section>
+
+  <!-- Reservation list section -->
+  <section>
+    <h2>Мої резервування</h2>
+    <ul class="reservation-list">
+      <!-- Reservation item -->
+      <li>
+        <span>Аудиторія 101, 12.02.2024, 10:05</span>
+        <div class="reservation-actions">
+          <a href="edit_reservation.html?id=1">Редагувати</a>
+          <a href="cancel_reservation.html?id=1">Скасувати</a>
+          <a href="delete_reservation.html?id=1">Видалити</a>
+        </div>
+      </li>
+
+      <!-- Another reservation item -->
+      <li>
+        <span>Аудиторія 102, 13.05.2024, 14:40</span>
+        <div class="reservation-actions">
+          <a href="edit_reservation.html?id=2">Редагувати</a>
+          <a href="cancel_reservation.html?id=2">Скасувати</a>
+          <a href="delete_reservation.html?id=2">Видалити</a>
+        </div>
+      </li>
+      <!-- etc. -->
+    </ul>
+  </section>
+
+  <!-- Profile and logout buttons -->
+  <footer>
+    <button class="profile-button" onclick="location.href='profile.html'">Мій профіль</button>
+    <button class="logout-button" onclick="location.href='login.html'">Вийти з аккаунта</button>
+  </footer>
+</div>
+</body>
+</html>
